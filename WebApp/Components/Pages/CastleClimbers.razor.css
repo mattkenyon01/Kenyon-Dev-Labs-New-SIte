@@ -1,0 +1,402 @@
+﻿.navbar {
+    position: absolute;
+    top: 5%; /* Adjust vertical position */
+    left: 2%; /* Center horizontally within its container */
+    width: 60%; /* Adjust width */
+    background-color: #5B0A0A; /* Semi-transparent black background */
+    color: white;
+    z-index: 10; /* Ensures it stays above the image */
+
+    border-radius: 15px; /* Rounds the corners */
+    padding: 0.5rem; /* Add some padding inside the navbar */
+    display: flex; /* Use flexbox to align items */
+    align-items: center; /* Vertically center content */
+}
+
+    .navbar img {
+        height: 50px; /* Adjust height of the image */
+        width: auto; /* Maintain aspect ratio */
+        margin-right: 1rem; /* Add space between image and nav links */
+        border-radius: 0%; /* Optional: Make the image circular */
+        margin-left: 1rem; /* Add space between nav links and the image */
+    }
+
+.nav-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between; /* Distribute items with equal spacing */
+    align-items: center; /* Vertically center items */
+    flex-grow: 1; /* Allow the nav list to grow and take up remaining space */
+}
+
+    .nav-list li {
+        padding: 1rem;
+    }
+
+    .nav-list a {
+        text-decoration: none;
+        color: white;
+        font-size: 1.2rem;
+        font-weight: bold;
+        transition: color 0.3s ease;
+    }
+
+        .nav-list a:hover {
+            color: #f1f1f1; /* Light gray on hover */
+        }
+
+/* Adjust full-width image container to avoid overlap issues */
+.full-width-image-with-text-container {
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.full-width-image-with-text {
+    width: 100%;
+    display: block;
+}
+
+.overlay-text {
+    position: absolute;
+    top: 38%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.level-panels-section {
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.panel-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.panel {
+    position: relative;
+    width: 80%;
+    height: 80%; /* Set a fixed height for taller panels */
+    margin: 0 5rem;
+    text-align: center;
+    background-color: #5B0A0A;
+    color: white;
+    border-radius: 10px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.panel-content h3 {
+    margin-bottom: 0.5rem;
+}
+
+.panel-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white;
+    color: #5B0A0A;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.left-arrow {
+    left: -15px;
+}
+
+.right-arrow {
+    right: -15px;
+}
+
+.arrow:hover {
+    background-color: #f1f1f1;
+    color: #5B0A0A;
+}
+
+/* Text and Image Section */
+
+.header-text-content {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center vertically within container */
+    align-items: center; /* Center horizontally */
+    margin: 2rem 1rem;
+    text-align: center; /* Center-align the text */
+    color: white;
+    padding: 1rem;
+    max-width: 800px; /* Optional: Limit width for better readability */
+    margin: 0 auto;
+}
+
+.image-grid {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px;
+    flex-wrap: wrap;
+}
+
+.image-item {
+    text-align: center;
+    margin: 10px;
+    flex: 1 1 calc(20% - 20px);
+    box-sizing: border-box;
+}
+
+    .image-item img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+.carousel-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.arrow {
+    font-size: 2rem;
+    color: darkorange;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+.carousel-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 80%;
+}
+
+.carousel-item {
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+    .carousel-item img {
+        max-width: 100px;
+        height: auto;
+        margin-right: 15px;
+        border-radius: 8px;
+    }
+
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    padding: 16px;
+    align-items: center;
+}
+
+    .card h2 {
+        margin: 0 0 10px;
+        font-size: 1.5em;
+        text-align: center;
+    }
+
+
+.card-content {
+    display: flex;
+    align-items: center;
+}
+
+    .card-content img {
+        max-width: 120px;
+        margin-right: 16px;
+    }
+
+.text-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.text-line {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+    .text-line img {
+        width: 20px;
+        height: 20px;
+        margin-right: 8px;
+    }
+
+    .text-line:last-child {
+        margin-bottom: 0;
+    }
+
+.music-container-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.music-container {
+    display: flex;
+    align-items: center;
+    padding: 75px;
+    border-radius: 8px;
+}
+
+.music-container-image {
+    width: 100px;
+    height: 100px;
+    margin-right: 15px;
+    object-fit: cover;
+}
+
+.music-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.music-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    padding: 16px;
+    align-items: center;
+    text-align: center;
+}
+
+    .music-card img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 16px;
+    }
+
+    .music-card h2 {
+        margin: 0 0 10px;
+        font-size: 1.5em;
+    }
+
+    .music-card p {
+        font-size: 1em;
+        color: white;
+        margin-bottom: 16px;
+    }
+
+    .music-card button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 1em;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+        .music-card button:hover {
+            background-color: #45a049;
+        }
+
+/* Updates Section CSS */
+.updates {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.update-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 16px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.update-image {
+    max-width: 50px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.update-text {
+    flex: 1;
+}
+
+    .update-text h2 {
+        margin: 10px 0 10px;
+        font-size: 1.5em;
+        color: #333;
+    }
+
+    .update-text p {
+        margin: 0;
+        font-size: 1em;
+        color: #555;
+    }
+
+.dropdown-arrow {
+    font-size: 2.5em;
+    color: #333;
+    margin-left: auto; /* Push it to the right */
+    cursor: pointer;
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+}
+
+.update-item:hover .dropdown-arrow {
+    color: #555;
+}
+
+.update-item.open .dropdown-arrow {
+    transform: rotate(180deg); /* Flip the arrow */
+}
