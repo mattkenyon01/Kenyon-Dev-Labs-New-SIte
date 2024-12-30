@@ -21,6 +21,60 @@
         margin-left: 1rem; /* Add space between nav links and the image */
     }
 
+p {
+    margin: 1rem 0rem;
+    padding: 0rem;
+    color: white; /* Text color */
+    line-height: 1.6; /* Comfortable line spacing */
+    font-size: 1.2rem; /* Slightly larger text */
+    font-family: 'Poppins', sans-serif; /* Consistent font style */
+}
+
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ff0000;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.1em;
+    line-height: 1.2;
+    background: linear-gradient(90deg, #ff0000, #ff7f50);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
+
+h2 {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: darkorange;
+    display: flex;
+    align-items: center;
+}
+
+    h2 img {
+        max-width: 50px;
+        max-height: 50px;
+        margin-right: 1.5rem;
+        border-radius: 50%;
+        margin-bottom: 5px;
+    }
+
+h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: darkorange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+span {
+    color: white;
+}
+
 .nav-list {
     margin: 0;
     padding: 0;
@@ -175,40 +229,116 @@
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
-.carousel-section {
+/* Characters Section CSS */
+.characters {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 20px 0;
-}
-
-.arrow {
-    font-size: 2rem;
-    color: darkorange;
-    cursor: pointer;
-    margin: 0 10px;
-}
-
-.carousel-content {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    flex-direction: column;
     gap: 20px;
-    width: 80%;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.carousel-item {
+.character-item {
     display: flex;
     align-items: center;
+    gap: 20px;
+    padding: 16px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 10px;
 }
 
-    .carousel-item img {
-        max-width: 100px;
+.character-image {
+    max-width: 50px;
+    height: auto;
+    border-radius: 8px;
+    align-self: center;
+}
+
+.dropdown-arrow {
+    font-size: 2.5em;
+    margin-left: auto; /* Push it to the far right */
+    cursor: pointer;
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+    order: 2; /* Ensure the dropdown arrow is last */
+}
+
+
+.character-text {
+    flex: 1;
+    color: black;
+}
+
+    .character-text h2 {
+        margin: 10px 0 10px;
+        font-size: 1.5em;
+        color: white;
+    }
+
+    .character-text p {
+        margin: 0;
+        font-size: 1em;
+        color: black;
+    }
+
+.dropdown-arrow {
+    font-size: 2.5em;
+    margin-left: auto; /* Push it to the right */
+    cursor: pointer;
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+}
+
+.character-item:hover .dropdown-arrow {
+    color: #555;
+}
+
+.character-item .character-details {
+    color: black !important;
+}
+
+.character-details {
+    margin-top: 10px; /* Add some spacing from the previous content */
+    color: white; /* Ensure text stands out on black background */
+    padding: 10px; /* Add some padding for spacing */
+    border-radius: 5px; /* Round the corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Add a shadow for separation */
+}
+
+    .character-details h3 {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        color: darkorange;
+        display: flex;
+        justify-content: left;
+    }
+
+.character-item.open .character-details {
+    display: block; /* Show the details when the item is open */
+}
+
+.character-image-grid {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+.character-image-item {
+    text-align: center;
+    margin: 10px;
+    flex: 1 1 calc(16.66% - 20px); /* Adjusted for 6 rows */
+    box-sizing: border-box;
+}
+
+    .character-image-item img {
+        max-width: 100%;
         height: auto;
-        margin-right: 15px;
         border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
 
@@ -328,7 +458,7 @@
     }
 
     .music-card button {
-        background-color: #4CAF50;
+        background-color: darkorange;
         color: white;
         border: none;
         border-radius: 5px;
@@ -339,7 +469,7 @@
     }
 
         .music-card button:hover {
-            background-color: #45a049;
+            background-color: darkorange;
         }
 
 /* Updates Section CSS */
@@ -350,6 +480,7 @@
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
+
 }
 
 .update-item {
@@ -357,9 +488,7 @@
     align-items: center;
     gap: 20px;
     padding: 16px;
-    background-color: #f9f9f9;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .update-image {
@@ -370,33 +499,55 @@
 
 .update-text {
     flex: 1;
+    color: black;
 }
 
     .update-text h2 {
         margin: 10px 0 10px;
         font-size: 1.5em;
-        color: #333;
+        color: white;
     }
 
     .update-text p {
         margin: 0;
         font-size: 1em;
-        color: #555;
+        color: black;
     }
 
 .dropdown-arrow {
     font-size: 2.5em;
-    color: #333;
     margin-left: auto; /* Push it to the right */
     cursor: pointer;
     transform: rotate(0deg);
-    transition: transform 0.3s ease;
+    color: darkorange;
+    padding: 10; /* Adjust padding */
+    border: none; /* Ensure no border contributes to the outline */
+    background-color: #111111;
 }
 
 .update-item:hover .dropdown-arrow {
     color: #555;
 }
 
-.update-item.open .dropdown-arrow {
-    transform: rotate(180deg); /* Flip the arrow */
+.update-item .update-details {
+    color: black !important;
+}
+
+.update-details {
+    margin-top: 10px; /* Add some spacing from the previous content */
+    padding: 10px; /* Add some padding for spacing */
+    border-radius: 5px; /* Round the corners */
+}
+
+.update-details h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: darkorange;
+    display: flex;
+    justify-content: left;
+}
+
+.update-item.open .update-details {
+    display: block; /* Show the details when the item is open */
 }

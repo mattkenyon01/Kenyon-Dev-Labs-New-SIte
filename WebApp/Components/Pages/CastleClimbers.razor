@@ -1,14 +1,5 @@
 ﻿@page "/CastleClimbers"
-
-@{
-    // Generate image data for panels dynamically in C#
-    var panelImages = new List<List<string>>
-    {
-        new List<string> { "/Images/CastleClimbers/Level1.png", "/Images/CastleClimbers/Level1_Alt.png", "/Images/CastleClimbers/Level1_Alt2.png" },
-        new List<string> { "/Images/CastleClimbers/Level2.png", "/Images/CastleClimbers/Level2_Alt.png", "/Images/CastleClimbers/Level2_Alt2.png" },
-        new List<string> { "/Images/CastleClimbers/Level3.png", "/Images/CastleClimbers/Level3_Alt.png", "/Images/CastleClimbers/Level3_Alt2.png" }
-    };
-}
+@rendermode InteractiveServer
 
 <div class="full-width-image-with-text-container">
     <!-- Navigation Bar -->
@@ -84,53 +75,311 @@
     </p>
 </div>
 
-<section class="carousel-section">
-    <div class="arrow">&#8592;</div>
-    <div class="carousel-content">
-        <div class="carousel-item">
-            <img src="../Images/Castle Climbers/Slimes/Blanc Sprite Sheet.png" alt="Image 6">
-            <div>
-                <h3>Leeko</h3>
-                <p>Cost</p>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <img src="image7.jpg" alt="Image 7">
-            <div>
-                <h3>Image Title 7</h3>
-                <p>Description for image 7</p>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <img src="image8.jpg" alt="Image 8">
-            <div>
-                <h3>Image Title 8</h3>
-                <p>Description for image 8</p>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <img src="image9.jpg" alt="Image 9">
-            <div>
-                <h3>Image Title 9</h3>
-                <p>Description for image 9</p>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <img src="image10.jpg" alt="Image 10">
-            <div>
-                <h3>Image Title 10</h3>
-                <p>Description for image 10</p>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <img src="image11.jpg" alt="Image 11">
-            <div>
-                <h3>Image Title 11</h3>
-                <p>Description for image 11</p>
-            </div>
-        </div>
+<div class="character-item">
+    <div class="character-text">
+        <h2>Colours</h2>
     </div>
-    <div class="arrow">&#8594;</div>
+    <img src="Images/Castle Climbers/Slimes/Slime 1.png" alt="Character Image 1" class="character-image">
+    <img src="Images/Castle Climbers/Slimes/Blanc Sprite Sheet.png" alt="Character Image 1" class="character-image">
+    <img src="Images/Castle Climbers/Slimes/Noir.png" alt="Character Image 1" class="character-image">
+    <img src="Images/Castle Climbers/Slimes/Brown Sprite Sheet.png" alt="Character Image 1" class="character-image">
+    <img src="Images/Castle Climbers/Slimes/Orange slime Sprite Sheet.png" alt="Character Image 1" class="character-image">
+    <img src="Images/Castle Climbers/Slimes/Pink slime sprite sheet.png" alt="Character Image 1" class="character-image">
+    <img src="Images/Castle Climbers/Slimes/Red slime sprite sheet.png" alt="Character Image 1" class="character-image">
+    <img src="Images/Castle Climbers/Slimes/Yellow slime sprite sheet.png" alt="Character Image 1" class="character-image">
+    <img src="Images/Castle Climbers/Slimes/Cyan slime sprite sheet.png" alt="Character Image 1" class="character-image">
+    <img src="Images/Castle Climbers/Slimes/Lime Green Sprite Sheet.png" alt="Character Image 1" class="character-image">
+    <img src="Images/Castle Climbers/Slimes/Purple slime Sprite Sheet.png" alt="Character Image 1" class="character-image">
+    <img src="Images/Castle Climbers/Slimes/Blue slime Sprite Sheet.png" alt="Character Image 1" class="character-image">
+    <button @onclick="() => ToggleCharacterDetails(0)" class="dropdown-arrow">
+        @if (isOpenCharacter[0])
+        {
+            @:&#9650; <!-- Up Arrow -->
+        }
+        else
+        {
+            @:&#9662; <!-- Down Arrow -->
+        }
+    </button>
+</div>
+
+<section class="character-image-grid">
+    @if (isOpenCharacter[0])
+    {
+        <div class="character-image-item">
+            <img src="Images/Castle Climbers/Slimes/Slime 1.png" alt="Character 1">
+            <h3>Leeko</h3>
+            <p>Level: 0m - 200m</p>
+        </div>
+        <div class="character-image-item">
+            <img src="Images/Castle Climbers/Slimes/Blanc Sprite Sheet.png" alt="Character 2">
+            <h3>Blanc</h3>
+            <p>Level: 0m - 200m</p>
+        </div>
+        <div class="character-image-item">
+            <img src="Images/Castle Climbers/Slimes/Noir.png" alt="Character 3">
+            <h3>Dungeon Explorer</h3>
+            <p>Level: 0m - 200m</p>            
+        </div>
+        <div class="character-image-item">
+            <img src="Images/Castle Climbers/Slimes/Brown Sprite Sheet.png" alt="Character 4">
+            <h3>Dungeon Explorer</h3>
+            <p>Level: 0m - 200m</p>
+        </div>
+        <div class="character-image-item">
+            <img src="Images/Castle Climbers/Slimes/Orange slime Sprite Sheet.png" alt="Character 5">
+            <h3>Dungeon Explorer</h3>
+            <p>Level: 0m - 200m</p>
+        </div>
+        <div class="character-image-item">
+            <img src="Images/Castle Climbers/Slimes/Pink slime sprite sheet.png" alt="Character 5">
+            <h3>Dungeon Explorer</h3>
+            <p>Level: 0m - 200m</p>
+        </div>
+        <div class="character-image-item">
+            <img src="Images/Castle Climbers/Slimes/Red slime sprite sheet.png" alt="Character 1">
+            <h3>Leeko</h3>
+            <p>Level: 0m - 200m</p>
+        </div>
+        <div class="character-image-item">
+            <img src="Images/Castle Climbers/Slimes/Yellow slime sprite sheet.png" alt="Character 2">
+            <h3>Blanc</h3>
+            <p>Level: 0m - 200m</p>
+        </div>
+        <div class="character-image-item">
+            <img src="Images/Castle Climbers/Slimes/Cyan slime sprite sheet.png" alt="Character 3">
+            <h3>Dungeon Explorer</h3>
+            <p>Level: 0m - 200m</p>
+        </div>
+        <div class="character-image-item">
+            <img src="Images/Castle Climbers/Slimes/Lime Green Sprite Sheet.png" alt="Character 4">
+            <h3>Dungeon Explorer</h3>
+            <p>Level: 0m - 200m</p>
+        </div>
+        <div class="character-image-item">
+            <img src="Images/Castle Climbers/Slimes/Purple slime Sprite Sheet.png" alt="Character 5">
+            <h3>Dungeon Explorer</h3>
+            <p>Level: 0m - 200m</p>
+        </div>
+        <div class="character-image-item">
+            <img src="Images/Castle Climbers/Slimes/Blue slime Sprite Sheet.png" alt="Character 5">
+            <h3>Dungeon Explorer</h3>
+            <p>Level: 0m - 200m</p>
+        </div>
+    }
+    
+</section>
+
+
+<div class="character-item">
+    <div class="character-text">
+        <h2>Gradient</h2>
+    </div>
+    <img src="Images/Castle Climbers/Slimes/Lime Green Yellow.png" alt="Character Image 2" class="character-image">
+    <img src="Images/Castle Climbers/Slimes/Gradient Sprite Sheet 4.png" alt="Character Image 2" class="character-image">
+    <img src="Images/Castle Climbers/Slimes/Gradient Sprite Sheet.png" alt="Character Image 2" class="character-image">
+    <img src="Images/Castle Climbers/Slimes/Gradient Sprite Sheet 3.png" alt="Character Image 2" class="character-image">
+    <img src="Images/Castle Climbers/Slimes/Gradient Sprite Sheet 2.png" alt="Character Image 2" class="character-image">
+    <img src="Images/Castle Climbers/Slimes/Gradient Sprite Sheet 5.png" alt="Character Image 2" class="character-image">
+    <img src="Images/Castle Climbers/Slimes/Gradient Sprite Sheet 6.png" alt="Character Image 2" class="character-image">
+    <img src="Images/Castle Climbers/Slimes/Blue Purple Slime.png" alt="Character Image 2" class="character-image">
+    <button @onclick="() => ToggleCharacterDetails(1)" class="dropdown-arrow">
+        @if (isOpenCharacter[1])
+        {
+            @:&#9650; <!-- Up Arrow -->
+        }
+        else
+        {
+            @:&#9662; <!-- Down Arrow -->
+        }
+    </button>
+</div>
+
+<section class="character-image-grid">
+    @if (isOpenCharacter[1])
+    {
+        <div class="character-image-item">
+            <img src="Images/Castle Climbers/Slimes/Lime Green Yellow.png" alt="Character 1">
+            <h3>Leeko</h3>
+            <p>Level: 0m - 200m</p>
+        </div>
+        <div class="character-image-item">
+            <img src="Images/Castle Climbers/Slimes/Gradient Sprite Sheet 4.png" alt="Character 2">
+            <h3>Blanc</h3>
+            <p>Level: 0m - 200m</p>
+        </div>
+        <div class="character-image-item">
+            <img src="Images/Castle Climbers/Slimes/Gradient Sprite Sheet.png" alt="Character 3">
+            <h3>Dungeon Explorer</h3>
+            <p>Level: 0m - 200m</p>
+        </div>
+        <div class="character-image-item">
+            <img src="Images/Castle Climbers/Slimes/Gradient Sprite Sheet 3.png" alt="Character 4">
+            <h3>Dungeon Explorer</h3>
+            <p>Level: 0m - 200m</p>
+        </div>
+        <div class="character-image-item">
+            <img src="Images/Castle Climbers/Slimes/Gradient Sprite Sheet 2.png" alt="Character 5">
+            <h3>Dungeon Explorer</h3>
+            <p>Level: 0m - 200m</p>
+        </div>
+        <div class="character-image-item">
+            <img src="Images/Castle Climbers/Slimes/Gradient Sprite Sheet 5.png" alt="Character 5">
+            <h3>Dungeon Explorer</h3>
+            <p>Level: 0m - 200m</p>
+        </div>
+        <div class="character-image-item">
+            <img src="Images/Castle Climbers/Slimes/Gradient Sprite Sheet 6.png" alt="Character 5">
+            <h3>Dungeon Explorer</h3>
+            <p>Level: 0m - 200m</p>
+        </div>
+        <div class="character-image-item">
+            <img src="Images/Castle Climbers/Slimes/Blue Purple Slime.png" alt="Character 5">
+            <h3>Dungeon Explorer</h3>
+            <p>Level: 0m - 200m</p>
+        </div>
+    }
+</section>
+
+<div class="character-item">
+    
+    <div class="character-text">
+        <h2>Space</h2>
+    </div>
+    <img src="Images/Castle Climbers/Slimes/Moon Sprite Sheet.png" alt="Character Image 3" class="character-image">
+    <img src="Images/Castle Climbers/Slimes/Saturn Sprite Sheet.png" alt="Character Image 3" class="character-image">
+    <img src="Images/Castle Climbers/Slimes/Mars.png" alt="Character Image 3" class="character-image">
+    <img src="Images/Castle Climbers/Slimes/World Slime sprite sheet.png" alt="Character Image 3" class="character-image">
+    <button @onclick="() => ToggleCharacterDetails(2)" class="dropdown-arrow">
+        @if (isOpenCharacter[2])
+        {
+            @:&#9650; <!-- Up Arrow -->
+        }
+        else
+        {
+            @:&#9662; <!-- Down Arrow -->
+        }
+    </button>
+</div>
+
+<section class="character-image-grid">
+    @if (isOpenCharacter[2])
+    {
+        <div class="character-image-item">
+            <img src="Images/Castle Climbers/Slimes/Moon Sprite Sheet.png" alt="Character 5">
+            <h3>Dungeon Explorer</h3>
+            <p>Level: 0m - 200m</p>
+        </div>
+        <div class="character-image-item">
+            <img src="Images/Castle Climbers/Slimes/Saturn Sprite Sheet.png" alt="Character 5">
+            <h3>Dungeon Explorer</h3>
+            <p>Level: 0m - 200m</p>
+        </div>
+        <div class="character-image-item">
+            <img src="Images/Castle Climbers/Slimes/Mars.png" alt="Character 5">
+            <h3>Dungeon Explorer</h3>
+            <p>Level: 0m - 200m</p>
+        </div>
+        <div class="character-image-item">
+            <img src="Images/Castle Climbers/Slimes/World Slime sprite sheet.png" alt="Character 5">
+            <h3>Dungeon Explorer</h3>
+            <p>Level: 0m - 200m</p>
+        </div>
+    }
+</section>
+
+<div class="character-item">
+
+    <div class="character-text">
+        <h2>Halloween</h2>
+    </div>
+    <img src="Images/Castle Climbers/Slimes/Webs.png" alt="Character Image 3" class="character-image">
+    <img src="Images/Castle Climbers/Slimes/Mummy.png" alt="Character Image 3" class="character-image">
+    <img src="Images/Castle Climbers/Slimes/Sprite Sheet Devil.png" alt="Character Image 3" class="character-image">
+    <img src="Images/Castle Climbers/Slimes/Sprite Sheet Ghost copy.png" alt="Character Image 3" class="character-image">
+    <img src="Images/Castle Climbers/Slimes/Pumpkin.png" alt="Character Image 3" class="character-image">
+    <button @onclick="() => ToggleCharacterDetails(3)" class="dropdown-arrow">
+        @if (isOpenCharacter[3])
+        {
+            @:&#9650; <!-- Up Arrow -->
+        }
+        else
+        {
+            @:&#9662; <!-- Down Arrow -->
+        }
+    </button>
+</div>
+
+<section class="character-image-grid">
+    @if (isOpenCharacter[3])
+    {
+        <div class="character-image-item">
+            <img src="Images/Castle Climbers/Slimes/Webs.png" alt="Character 5">
+            <h3>Dungeon Explorer</h3>
+            <p>Level: 0m - 200m</p>
+        </div>
+        <div class="character-image-item">
+            <img src="Images/Castle Climbers/Slimes/Mummy.png" alt="Character 5">
+            <h3>Dungeon Explorer</h3>
+            <p>Level: 0m - 200m</p>
+        </div>
+        <div class="character-image-item">
+            <img src="Images/Castle Climbers/Slimes/Sprite Sheet Devil.png" alt="Character 5">
+            <h3>Dungeon Explorer</h3>
+            <p>Level: 0m - 200m</p>
+        </div>
+        <div class="character-image-item">
+            <img src="Images/Castle Climbers/Slimes/Sprite Sheet Ghost copy.png" alt="Character 5">
+            <h3>Dungeon Explorer</h3>
+            <p>Level: 0m - 200m</p>
+        </div>
+        <div class="character-image-item">
+            <img src="Images/Castle Climbers/Slimes/Pumpkin.png" alt="Character 5">
+            <h3>Dungeon Explorer</h3>
+            <p>Level: 0m - 200m</p>
+        </div>
+    }
+</section>
+
+<div class="character-item">
+
+    <div class="character-text">
+        <h2>Special</h2>
+    </div>
+    <img src="Images/Castle Climbers/Slimes/Future Slime.png" alt="Character Image 3" class="character-image">
+    <img src="Images/Castle Climbers/Slimes/Distinguished Slimes.png" alt="Character Image 3" class="character-image">
+    <img src="Images/Castle Climbers/Slimes/Heart Sprites.png" alt="Character Image 3" class="character-image">
+    <button @onclick="() => ToggleCharacterDetails(4)" class="dropdown-arrow">
+        @if (isOpenCharacter[4])
+        {
+            @:&#9650; <!-- Up Arrow -->
+        }
+        else
+        {
+            @:&#9662; <!-- Down Arrow -->
+        }
+    </button>
+</div>
+
+<section class="character-image-grid">
+    @if (isOpenCharacter[4])
+    {
+        <div class="character-image-item">
+            <img src="Images/Castle Climbers/Slimes/Future Slime.png" alt="Character 5">
+            <h3>Dungeon Explorer</h3>
+            <p>Level: 0m - 200m</p>
+        </div>
+        <div class="character-image-item">
+            <img src="Images/Castle Climbers/Slimes/Distinguished Slimes.png" alt="Character 5">
+            <h3>Dungeon Explorer</h3>
+            <p>Level: 0m - 200m</p>
+        </div>
+        <div class="character-image-item">
+            <img src="Images/Castle Climbers/Slimes/Heart Sprites.png" alt="Character 5">
+            <h3>Dungeon Explorer</h3>
+            <p>Level: 0m - 200m</p>
+        </div>
+    }
 </section>
 
 <div class="header-text-content">
@@ -359,44 +608,44 @@
     </div>
 </div>
 
-    <div class="music-links">
-        <div class="music-card">
-            <img src="Images/Castle Climbers/Menu_Theme_Cover.png" alt="Music Image 1">
-            <h2>Menu Track</h2>
-            <p>Title Theme - xDeviruchi</p>
-            <button>Listen Now</button>
-        </div>
-        <div class="music-card">
-        <img src="Images/Castle Climbers/Dungeon_Theme_Cover.png" alt="Music Image 2">
-            <h2>Track 2</h2>
-            <p>Description of track 2. A brief overview of the song.</p>
-            <button>Listen Now</button>
-        </div>
-        <div class="music-card">
-        <img src="Images/Castle Climbers/Castle_Theme_Cover.png" alt="Music Image 3">
-            <h2>Track 3</h2>
-            <p>Description of track 3. A brief overview of the song.</p>
-            <button>Listen Now</button>
-        </div>
-        <div class="music-card">
-        <img src="Images/Castle Climbers/Clouds_Theme_Cover.png" alt="Music Image 4">
-            <h2>Track 4</h2>
-            <p>Description of track 4. A brief overview of the song.</p>
-            <button>Listen Now</button>
-        </div>
-        <div class="music-card">
-        <img src="Images/Castle Climbers/Music_Cover.png" alt="Music Image 5">
-            <h2>Track 5</h2>
-            <p>Description of track 5. A brief overview of the song.</p>
-            <button>Listen Now</button>
-        </div>
-        <div class="music-card">
-        <img src="Images/Castle Climbers/Space_Theme_Cover.png" alt="Music Image 6">
-            <h2>Track 6</h2>
-            <p>Description of track 6. A brief overview of the song.</p>
-            <button>Listen Now</button>
-        </div>
+<div class="music-links">
+    <div class="music-card">
+        <img src="Images/Castle Climbers/Menu_Theme_Cover.png" alt="Music Image 1">
+        <h2>Menu Track</h2>
+        <p>Title Theme - xDeviruchi</p>
+        <button>Listen Now</button>
     </div>
+    <div class="music-card">
+        <img src="Images/Castle Climbers/Dungeon_Theme_Cover.png" alt="Music Image 2">
+        <h2>Track 2</h2>
+        <p>Description of track 2. A brief overview of the song.</p>
+        <button>Listen Now</button>
+    </div>
+    <div class="music-card">
+        <img src="Images/Castle Climbers/Castle_Theme_Cover.png" alt="Music Image 3">
+        <h2>Track 3</h2>
+        <p>Description of track 3. A brief overview of the song.</p>
+        <button>Listen Now</button>
+    </div>
+    <div class="music-card">
+        <img src="Images/Castle Climbers/Clouds_Theme_Cover.png" alt="Music Image 4">
+        <h2>Track 4</h2>
+        <p>Description of track 4. A brief overview of the song.</p>
+        <button>Listen Now</button>
+    </div>
+    <div class="music-card">
+        <img src="Images/Castle Climbers/Music_Cover.png" alt="Music Image 5">
+        <h2>Track 5</h2>
+        <p>Description of track 5. A brief overview of the song.</p>
+        <button>Listen Now</button>
+    </div>
+    <div class="music-card">
+        <img src="Images/Castle Climbers/Space_Theme_Cover.png" alt="Music Image 6">
+        <h2>Track 6</h2>
+        <p>Description of track 6. A brief overview of the song.</p>
+        <button>Listen Now</button>
+    </div>
+</div>
 
 <div class="header-text-content">
     <h2>Updates</h2>
@@ -408,32 +657,109 @@
     </p>
 </div>
 
-<div class="updates">
-    <div class="update-item">
-        <img src="Images/Castle Climbers/3.0 CC.png" alt="Update Image 1" class="update-image">
-        <div class="update-text">
-            <h2>Castle Climbers 0.3</h2>
-        </div>
-        <div class="dropdown-arrow">
-            &#9662; <!-- Unicode for a downwards arrow -->
-        </div>
+<div class="update-item">
+    <img src="Images/Castle Climbers/3.0 CC.png" alt="Update Image 1" class="update-image">
+    <div class="update-text">
+        <h2>Castle Climbers 0.3</h2>
     </div>
-    <div class="update-item">
-        <img src="Images/Castle Climbers/2.0 CC.png" alt="Update Image 2" class="update-image">
-        <div class="update-text">
-            <h2>Castle Climbers 0.2</h2>
-        </div>
-        <div class="dropdown-arrow">
-            &#9662;
-        </div>
-    </div>
-    <div class="update-item">
-        <img src="Images/Castle Climbers/1.0 CC.png" alt="Update Image 3" class="update-image">
-        <div class="update-text">
-            <h2>Castle Climbers 0.1</h2>
-        </div>
-        <div class="dropdown-arrow">
-            &#9662;
-        </div>
-    </div>
+    <button @onclick="() => ToggleDetails(0)" class="dropdown-arrow">
+        @if (isOpen[0])
+        {
+            @:&#9650; <!-- Up Arrow -->
+        }
+        else
+        {
+            @:&#9662; <!-- Down Arrow -->
+        }
+    </button>
+
 </div>
+
+<div class="update-details">
+    @if (isOpen[0])
+    {
+        <h3>Version 0.3.1</h3>
+        <p>Minor bug fixes.</p>
+
+        <h3>Version 0.3.0</h3>
+        <p>Version 0.3.0 brings newly designed menu screens to replace the old simple screens and brings more life to the game.</p>
+    }
+</div>
+
+<div class="update-item">
+    <img src="Images/Castle Climbers/2.0 CC.png" alt="Update Image 1" class="update-image">
+    <div class="update-text">
+        <h2>Castle Climbers 0.3</h2>
+    </div>
+    <button @onclick="() => ToggleDetails(1)" class="dropdown-arrow">
+        @if (isOpen[1])
+        {
+            @:&#9650; <!-- Up Arrow -->
+        }
+        else
+        {
+            @:&#9662; <!-- Down Arrow -->
+        }
+    </button>
+
+</div>
+
+<div class="update-details">
+    @if (isOpen[1])
+    {
+        <h3>Version 0.2.1</h3>
+        <p>New Halloween characters can be found in the shop, along with minor bug fixes.</p>
+
+        <h3>Version 0.2.0</h3>
+        <p>
+            Castle Climbers 0.2.0 is here, and there’s a lot of new features, including the new accounts system, allowing you to play
+            from any device, as well as the leaderboard system, allowing you to challenge your friends and fight for that number
+            1 spot. There have also been minor bug fixes and assistance with controls.
+        </p>
+    }
+</div>
+
+<div class="update-item">
+    <img src="Images/Castle Climbers/1.0 CC.png" alt="Update Image 1" class="update-image">
+    <div class="update-text">
+        <h2>Castle Climbers 0.3</h2>
+    </div>
+    <button @onclick="() => ToggleDetails(2)" class="dropdown-arrow">
+        @if (isOpen[2])
+        {
+            @:&#9650; <!-- Up Arrow -->
+        }
+        else
+        {
+            @:&#9662; <!-- Down Arrow -->
+        }
+    </button>
+
+</div>
+
+<div class="update-details">
+    @if (isOpen[2])
+    {
+        <h3>Version 0.1.1</h3>
+        <p>Initial release of the app to app stores.</p>
+    }
+</div>
+
+@code {
+
+    private bool[] isOpenCharacter = new bool[5]; // Tracks the state of each character section
+
+    private void ToggleCharacterDetails(int index)
+    {
+        isOpenCharacter[index] = !isOpenCharacter[index];
+    }
+
+    private bool[] isOpen = new bool[3]; // Tracks the state of each update section
+
+    private void ToggleDetails(int index)
+    {
+        isOpen[index] = !isOpen[index];
+    }
+
+
+}
