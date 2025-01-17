@@ -1,4 +1,5 @@
 ﻿@page "/"
+@rendermode InteractiveServer
 
 <PageTitle>Home</PageTitle>
 
@@ -6,39 +7,148 @@
     <img class="full-width-image" src="../Images/Labs Illustration.png" alt="Full width description" />
 </div>
 
-<!-- Text and Image Section -->
 <div class="text-image-section">
-    <div class="text-content">
-        <h2>Your Title Here</h2>
-        <p>
-            This is where your descriptive text goes. You can add more content
-            about your image or any topic here to explain further.
+    <h2>Welcome to Kenyon Dev Labs</h2>
+    <div class="content-wrapper">
+        <div class="text-content">
+            <p>
+                At  <span class="cc-highlight">Kenyon Dev Labs</span>, we are passionate about bringing creative and unique apps to life. Our mission is to develop applications that solve real-world problems and make an impact on users.
+            </p>
+        </div>
+        <div class="image-content">
+            <img src="./Images/About.png" alt="Placeholder Image">
+        </div>
+    </div>
+</div>
+
+<div class="header-text-content">
+    <h2>Our Apps</h2>
+    <p>
+        Explore our collection of thoughtfully designed apps, each crafted to deliver unique experiences and solutions. Whether you're seeking innovation, entertainment, or convenience, our apps offer something for everyone.
+    </p>
+</div>
+
+<div class="two-row-section">
+    <!-- Castle Climbers Row -->
+    <div class="row-item">
+        <div class="row-text">
+            <h2 class="header-castle-climbers">
+                <img src="../Images/CC Icon.png" alt="Icon 1"> Castle Climbers
+            </h2>
+            <p>
+                Castle Climbers is a <span class="cc-highlight">2D infinite scrolling platformer</span>,
+                consisting of many different stages as you climb higher and higher through the world.
+                Choose from a roster of <span class="cc-highlight">32 characters</span>, with extra
+                customisation available for each. Complete achievements and challenges to
+                <span class="cc-highlight">show off your skills</span>, and check your stats and compare
+                with friends to see who is the best Castle Climber.
+            </p>
+            <a href="../CastleClimbers" class="button-castle-climbers">Castle Climbers Page</a>
+        </div>
+        <div class="row-image">
+            <img src="../Images/Castle Climbers Cover.png" alt="Castle Climbers Cover" />
+        </div>
+    </div>
+
+    <!-- Bucket Connect Row -->
+    <div class="row-item">
+        <div class="row-text">
+            <h2 class="header-bucket-connect">
+                <img src="../Images/Bucket Connect App Icon.png" alt="Icon 2"> Bucket Connect
+            </h2>
+            <p>
+                Turn your dreams into reality with Bucket Connect! Design your ultimate
+                <span class="bc-highlight">bucket list</span>, filled with activities you want to
+                experience and places you want to visit before kicking the bucket. Easily
+                connect with friends, <span class="bc-highlight">share your lists</span>, and inspire
+                each other to <span class="bc-highlight">achieve your goals</span>. Start planning
+                your next adventure today with Bucket Connect!
+            </p>
+            <a href="../BucketConnect" class="button-bucket-connect">Bucket Connect Page</a>
+        </div>
+        <div class="row-image">
+            <img src="../Images/Bucket Connect Cover.png" alt="Bucket Connect Cover" />
+        </div>
+    </div>
+</div>
+
+<div class="arrow-section">
+    <div class="arrow-content">
+        <!-- Static Header with Arrows -->
+        <div class="static-header">
+            <span class="arrow" @onclick="DecreaseIndex">&#8592;</span>
+            <h2>Timeline</h2>
+            <span class="arrow" @onclick="IncreaseIndex">&#8594;</span>
+        </div>
+        <!-- Dynamic Title -->
+        <div class="arrow-title">
+            <h2>@titles[currentIndex]</h2>
+        </div>
+        <!-- Description -->
+        <p class="arrow-description">
+            @descriptions[currentIndex]
         </p>
-    </div>
-    <div class="image-content">
-        <img src="../Images/Labs Illustration.png" alt="Description of image" />
+        <!-- Circle Indicators -->
+        <div class="circle-container">
+            @for (int i = 0; i < 8; i++)
+            {
+                <div class="circle @(i == currentIndex ? "highlighted" : "")"></div>
+            }
+        </div>
     </div>
 </div>
 
-<!-- Two-Column Section with Rows and Images -->
-<div class="two-column-section">
-    <div class="panel">
-        <div class="row">
-            <h2><img src="../Images/CC Icon.png" alt="Icon 1">Castle Climbers</h2>
-            <p>Here Here Here Here Here Here Here Here Here</p>
-            <img src="../Images/Castle Climbers Cover.png" alt="Row 1 Panel 1 image" />
-            <a href="../CastleClimbers" class="row-button">Castle Climbers Page</a>
+<footer class="footer-section">
+    <div class="footer-content">
+        <h2>Kenyon Dev Labs</h2>
+        <p>
+            Bringing creative and unique apps to life. Solving real-world problems through technology and innovation.
+        </p>
+        <div class="footer-links">
+            <a href="mailto:info@kenyondevlabs.com">kenyondevlabs@gmail.com</a> |
+            <a href="https://instagram.com/kenyondevlabs" target="_blank">Kenyon Dev Labs Instagram</a> |
+            <a href="https://instagram.com/kenyondevlabs" target="_blank">Kenyon Game Labs Instagram</a>
+        </div>
+        <p class="copyright">&copy; 2025 Kenyon Dev Labs. All Rights Reserved.</p>
+    </div>
+</footer>
 
-        </div>
-        
-    </div>
-    <div class="panel">
-        <div class="row">
-            <h2><img src="../Images/Bucket Connect App Icon.png" alt="Icon 4">Bucket Connect</h2>
-            <p>Here</p>
-            <img src="../Images/Bucket Connect Cover.png" alt="Row 1 Panel 2 image" />
-            <a href="../BucketConnect" class="row-button">Castle Climbers Page</a>
-        </div>
-        
-    </div>
-</div>
+
+@code {
+    private int currentIndex = 0;
+
+    private readonly string[] titles = new string[]
+    {
+    "16th March 2021",
+    "24th July 2021",
+    "8th September 2023",
+    "6th October 2023",
+    "8th November 2023",
+    "22nd January 2024",
+    "2nd March 2024",
+    "14th July 2024"
+    };
+
+    private readonly string[] descriptions = new string[]
+    {
+    "Production on Castle Climbers began as a concept that required considerable work before becoming a reality.",
+    "A few months into development, the first Castle Climbers icon was created. It was simple but functional.",
+    "Castle Climbers became the first app from Kenyon Dev Labs to be publicly available on the app store.",
+    "Version 0.2.0 of Castle Climbers was released with festive Halloween characters.",
+    "The first logo for Kenyon Game Labs was designed to unify all projects under a single identity.",
+    "The most significant update to Castle Climbers, version 0.3.0, introduced a complete game overhaul.",
+    "The Girls Who Walk app was released to facilitate organized social walking events for women.",
+    "A social platform called Bucket Connect was launched to help users manage and share their bucket lists."
+    };
+
+
+    private void IncreaseIndex()
+    {
+        currentIndex = (currentIndex + 1) % 8; // Wraps around to 0 after 7
+    }
+
+    private void DecreaseIndex()
+    {
+        currentIndex = (currentIndex - 1 + 8) % 8; // Ensures it wraps correctly to 7 from 0
+    }
+}

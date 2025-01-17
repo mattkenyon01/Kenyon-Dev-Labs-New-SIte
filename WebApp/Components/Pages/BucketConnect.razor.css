@@ -266,3 +266,21 @@ span {
 .update-item.open .update-details {
     display: block; /* Show the details when the item is open */
 }
+
+.highlight {
+    font-weight: bold; /* Optional: Makes the text bold */
+    color: #00bfae;
+}
+
+.header-text-content {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center vertically within container */
+    align-items: center; /* Center horizontally */
+    margin: 2rem 1rem;
+    text-align: center; /* Center-align the text */
+    color: white;
+    padding: 1rem;
+    max-width: 800px; /* Optional: Limit width for better readability */
+    margin: 0 auto;
+}

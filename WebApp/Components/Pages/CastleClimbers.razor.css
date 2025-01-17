@@ -350,7 +350,9 @@ span {
     max-width: 1200px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0 auto; /* This centers the container horizontally */
 }
+
 
 .card {
     display: flex;
@@ -408,15 +410,17 @@ span {
 
 .music-container {
     display: flex;
+    flex-direction: column; /* Changes direction to column */
     align-items: center;
     padding: 75px;
     border-radius: 8px;
+    text-align: center; /* Centers the text under the image */
 }
 
 .music-container-image {
     width: 100px;
     height: 100px;
-    margin-right: 15px;
+    margin-bottom: 15px; /* Adds spacing between image and text */
     object-fit: cover;
 }
 
@@ -428,6 +432,7 @@ span {
     max-width: 1200px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0 auto; /* This centers the container horizontally */
 }
 
 .music-card {

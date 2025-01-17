@@ -1,42 +1,49 @@
 ﻿/* Two-Column Section with Rows and Images */
 
-.two-column-section {
+.two-row-section {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 2rem; /* Add spacing between rows */
     margin: 2rem 1rem;
 }
 
-.panel {
-    flex: 1;
-    padding: 1rem;
-    background-color: #222222;
-    border-radius: 0.5rem;
-    margin: 0 0.5rem;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-}
-
-.row {
-    margin-bottom: 1rem;
-    padding: 1rem;
-    background-color: #333333;
-    border-radius: 0.5rem;
-    color: white;
-    text-align: center;
-    position: relative;
+/* Row Item Styling */
+.row-item {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
+    padding: 1rem;
+    gap: 1rem;
 }
 
-    .row img {
-        max-width: 100%;
-        height: auto;
-        border-radius: 0.5rem;
-        margin-top: 0.5rem;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-    }
+/* Text Section in Row */
+.row-text {
+    flex: 1;
+    color: white;
+    text-align: left;
+}
 
-.row-button {
+.row-text h2 img {
+    max-width: 50px;
+    max-height: 50px;
+    margin-right: 1rem;
+    border-radius: 0%; /* This makes the image circular */
+}
+
+/* Castle Climbers Header */
+.header-castle-climbers {
+    font-size: 1.5rem;
+    color: darkorange;
+}
+
+/* Bucket Connect Header */
+.header-bucket-connect {
+    font-size: 1.5rem;
+    color: #00bfae;
+}
+
+/* Castle Climbers Button */
+.button-castle-climbers {
     margin-top: 1rem;
     padding: 0.5rem 1rem;
     background-color: darkorange;
@@ -46,11 +53,61 @@
     cursor: pointer;
     font-size: 1rem;
     transition: background-color 0.3s ease;
+    text-decoration: none; /* Removes underline from button text */
+    display: inline-block; /* Ensures it behaves like a button */
 }
 
-    .row-button:hover {
-        background-color: orangered;
-    }
+.button-castle-climbers:hover {
+    background-color: #3a8c3e; /* Darker green on hover */
+}
+
+/* Bucket Connect Button */
+.button-bucket-connect {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #00bfae;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    text-decoration: none; /* Removes underline from button text */
+    display: inline-block; /* Ensures it behaves like a button */
+}
+
+.button-bucket-connect:hover {
+    background-color: #e68a00; /* Darker orange on hover */
+}
+
+/* Highlighted text style for Castle Climbers */
+.cc-highlight {
+    color: darkorange;
+    font-weight: bold;
+}
+
+/* Highlighted text style for Bucket Connect */
+.bc-highlight {
+    color: #00bfae;
+    font-weight: bold;
+}
+
+
+
+
+/* Image Section in Row */
+.row-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.row-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+}
+
 
 /* Full-Width Image Section */
 
@@ -58,7 +115,445 @@
     width: 100%;
     display: block;
     border-radius: 0.5rem;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
     margin-bottom: 2rem;
 }
 
+.navbar {
+    position: absolute;
+    top: 5%; /* Adjust vertical position */
+    left: 2%; /* Center horizontally within its container */
+    width: 60%; /* Adjust width */
+    background-color: #00bfae; /* Semi-transparent black background */
+    color: white;
+    z-index: 10; /* Ensures it stays above the image */
+
+    border-radius: 15px; /* Rounds the corners */
+    padding: 0.5rem; /* Add some padding inside the navbar */
+    display: flex; /* Use flexbox to align items */
+    align-items: center; /* Vertically center content */
+}
+
+    .navbar img {
+        height: 50px; /* Adjust height of the image */
+        width: auto; /* Maintain aspect ratio */
+        margin-right: 1rem; /* Add space between image and nav links */
+        border-radius: 0%; /* Optional: Make the image circular */
+        margin-left: 1rem; /* Add space between nav links and the image */
+    }
+
+p {
+    margin: 1rem 0rem;
+    padding: 0rem;
+    color: white; /* Text color */
+    line-height: 1.6; /* Comfortable line spacing */
+    font-size: 1.2rem; /* Slightly larger text */
+    font-family: 'Poppins', sans-serif; /* Consistent font style */
+}
+
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: darkorange;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.1em;
+    line-height: 1.2;
+    background: linear-gradient(90deg, #ff0000, #ff7f50);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
+
+h2 {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: darkorange;
+    display: flex;
+    align-items: center;
+}
+
+    h2 img {
+        max-width: 50px;
+        max-height: 50px;
+        margin-right: 1.5rem;
+        border-radius: 50%;
+        margin-bottom: 5px;
+    }
+
+h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: darkorange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+span {
+    color: white;
+}
+
+.text-image-section {
+    display: flex;
+    flex-direction: column; /* Stack the header and content-wrapper vertically */
+    align-items: center; /* Center align header */
+    gap: 20px; /* Add spacing between header and content-wrapper */
+    margin: 2rem auto; /* Center section horizontally */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 80%; /* Restrict the width of the section */
+    text-align: center; /* Center the header text */
+}
+
+    .text-image-section h2 {
+        margin: 0; /* Remove unnecessary margin */
+    }
+
+.content-wrapper {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Distribute text and image equally */
+    gap: 20px; /* Add spacing between image and text */
+    width: 100%; /* Ensure the content-wrapper spans full width */
+}
+
+.text-content {
+    flex: 1; /* Allow the text to take up equal space */
+    text-align: left; /* Align text to the left */
+    color: white;
+}
+
+
+.image-content {
+    flex: 1; /* Allow the image to take up equal space */
+    display: flex;
+    justify-content: flex-end; /* Align the image to the right */
+}
+
+    .image-content img {
+        max-width: 100%; /* Allow the image to scale dynamically */
+        height: auto;
+        border-radius: 10px;
+    }
+
+
+
+.nav-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between; /* Distribute items with equal spacing */
+    align-items: center; /* Vertically center items */
+    flex-grow: 1; /* Allow the nav list to grow and take up remaining space */
+}
+
+    .nav-list li {
+        padding: 1rem;
+    }
+
+    .nav-list a {
+        text-decoration: none;
+        color: white;
+        font-size: 1.2rem;
+        font-weight: bold;
+        transition: color 0.3s ease;
+    }
+
+        .nav-list a:hover {
+            color: #f1f1f1; /* Light gray on hover */
+        }
+
+/* Adjust full-width image container to avoid overlap issues */
+.full-width-image-with-text-container {
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.full-width-image-with-text {
+    width: 100%;
+    display: block;
+}
+
+.overlay-text {
+    position: absolute;
+    top: 38%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.level-panels-section {
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.panel-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+
+/* Updates Section CSS */
+.updates {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.update-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.update-image {
+    max-width: 50px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.update-text {
+    flex: 1;
+    color: black;
+}
+
+    .update-text h2 {
+        margin: 10px 0 10px;
+        font-size: 1.5em;
+        color: white;
+    }
+
+    .update-text p {
+        margin: 0;
+        font-size: 1em;
+        color: black;
+    }
+
+.dropdown-arrow {
+    font-size: 2.5em;
+    margin-left: auto; /* Push it to the right */
+    cursor: pointer;
+    transform: rotate(0deg);
+    color: #00bfae;
+    padding: 10; /* Adjust padding */
+    border: none; /* Ensure no border contributes to the outline */
+}
+
+.update-item:hover .dropdown-arrow {
+    color: #555;
+}
+
+.update-item .update-details {
+    color: black !important;
+}
+
+.update-details {
+    margin-top: 10px; /* Add some spacing from the previous content */
+    color: white; /* Ensure text stands out on black background */
+    padding: 10px; /* Add some padding for spacing */
+    border-radius: 5px; /* Round the corners */
+}
+
+    .update-details h3 {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        color: #00bfae;
+        display: flex;
+        justify-content: left;
+    }
+
+.update-item.open .update-details {
+    display: block; /* Show the details when the item is open */
+}
+
+/*********************************************/
+/* Arrow Section */
+/*********************************************/
+.arrow-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    margin: 2rem auto;
+    max-width: 80%;
+    color: white;
+    text-align: center;
+}
+
+.arrow-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*********************************************/
+/* Static Header */
+/*********************************************/
+.static-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem; /* Increase or decrease to adjust spacing */
+    font-size: 2rem;
+    font-family: 'Poppins', sans-serif;
+    color: #00bfae;
+}
+
+    .static-header .arrow {
+        font-size: 2.5rem; /* Unified size for arrows */
+        cursor: pointer;
+        color: darkorange; /* Default color for arrows in the static header */
+        transition: color 0.3s ease;
+        margin-top: 5rem; /* Adjust this value to move the arrows down */
+    }
+
+
+        .static-header .arrow:hover {
+            color: orangered; /* Hover effect for static header arrows */
+        }
+
+/*********************************************/
+/* Arrow Title */
+/*********************************************/
+.arrow-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 2rem;
+    color: #00bfae;
+}
+
+    .arrow-title h2 {
+        text-align: center;
+        font-size: 20px;
+        margin: 10px 0;
+    }
+
+/*********************************************/
+/* Arrow Description */
+/*********************************************/
+.arrow-description {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: white;
+}
+
+/*********************************************/
+/* Circle Container */
+/*********************************************/
+.circle-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem; /* Unified spacing between circles */
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.circle {
+    width: 10px;
+    height: 10px;
+    background-color: #000000; /* Unified default circle color */
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+    .circle.highlighted {
+        background-color: darkorange; /* Unified highlighted circle color */
+    }
+
+.header-text-content {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center vertically within container */
+    align-items: center; /* Center horizontally */
+    margin: 2rem 1rem;
+    text-align: center; /* Center-align the text */
+    color: white;
+    padding: 1rem;
+    max-width: 800px; /* Optional: Limit width for better readability */
+    margin: 0 auto;
+}
+
+.footer-section {
+    width: 100%;
+    background-color: #222;
+    padding: 2rem 1rem;
+    text-align: center;
+    color: white;
+    border-top: 2px solid darkorange;
+    margin-top: 3rem;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    box-sizing: border-box; /* Ensure padding doesn't increase width */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers content horizontally */
+}
+
+.footer-content {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers content horizontally */
+    text-align: center; /* Centers text */
+}
+
+    .footer-content h2 {
+        margin-bottom: 1rem;
+        font-size: 2rem;
+        color: darkorange;
+    }
+
+    .footer-content p {
+        margin-bottom: 1.5rem;
+        font-size: 1.2rem;
+        line-height: 1.6;
+    }
+
+.footer-links {
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center; /* Centers links */
+    gap: 1rem; /* Adds spacing between links */
+    flex-wrap: wrap; /* Ensures links wrap on smaller screens */
+}
+
+    .footer-links a {
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+        .footer-links a:hover {
+            color: darkorange;
+        }
+
+.copyright {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-top: 1rem;
+}
