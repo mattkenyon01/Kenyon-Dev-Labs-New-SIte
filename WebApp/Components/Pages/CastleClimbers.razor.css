@@ -133,6 +133,18 @@ span {
     align-items: center;
 }
 
+.level-text {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between icon and text */
+}
+
+.level-text img {
+    width: 20px;
+    height: auto;
+}
+
+
 .panel-row {
     display: flex;
     justify-content: center;
@@ -210,7 +222,7 @@ span {
 .image-grid {
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-start; /* Align items to the top */
     margin: 20px;
     flex-wrap: wrap;
 }
@@ -220,6 +232,9 @@ span {
     margin: 10px;
     flex: 1 1 calc(20% - 20px);
     box-sizing: border-box;
+    display: flex; /* Use flexbox within each item */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center-align content horizontally */
 }
 
     .image-item img {
@@ -227,7 +242,9 @@ span {
         height: auto;
         border-radius: 8px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin-bottom: 10px; /* Add spacing between the image and text */
     }
+
 
 /* Characters Section CSS */
 .characters {
@@ -254,6 +271,7 @@ span {
     border-radius: 8px;
     align-self: center;
 }
+
 
 .dropdown-arrow {
     font-size: 2.5em;
@@ -341,6 +359,66 @@ span {
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
+.text-with-icon {
+    margin-left: -70px; /* Moves it to the left */
+    margin-top: 0px; /* Moves it up */
+}
+
+.text-image-section {
+    display: flex;
+    flex-direction: column; /* Stack the header and content-wrapper vertically */
+    align-items: center; /* Center align header */
+    gap: 20px; /* Add spacing between header and content-wrapper */
+    margin: 2rem auto; /* Center section horizontally */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 80%; /* Restrict the width of the section */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center the header text */
+}
+
+    .text-image-section h2 {
+        margin: 0; /* Remove unnecessary margin */
+    }
+
+.content-wrapper {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Distribute text and image equally */
+    gap: 20px; /* Add spacing between image and text */
+    width: 100%; /* Ensure the content-wrapper spans full width */
+}
+
+.text-content {
+    flex: 1; /* Allow the text to take up equal space */
+    text-align: left; /* Align text to the left */
+    color: white;
+}
+
+
+.image-content {
+    flex: 1; /* Allow the image to take up equal space */
+    display: flex;
+    justify-content: flex-end; /* Align the image to the right */
+}
+
+    .image-content img {
+        max-width: 100%; /* Allow the image to scale dynamically */
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+.coin-icon {
+    margin-right: 80px; /* Adjust spacing between the coin and text */
+    position: relative;
+    top: 8px; /* Adjusts vertical position of the coin */
+    left: 70px; /* Adjusts horizontal position of the coin */
+    width: 30px; /* Sets the width of the coin */
+    height: 30px; /* Sets the height of the coin */
+}
+
+
 
 .container {
     display: grid;
@@ -400,6 +478,10 @@ span {
     .text-line:last-child {
         margin-bottom: 0;
     }
+
+
+
+
 
 .music-container-section {
     display: flex;
@@ -467,11 +549,24 @@ span {
         color: white;
         border: none;
         border-radius: 5px;
-        padding: 10px 20px;
+        padding: 5px 20px;
         font-size: 1em;
         cursor: pointer;
         transition: background-color 0.3s;
+        display: flex; /* Enable flexbox for the button */
+        align-items: center; /* Align items vertically */
+        gap: 15px; /* Add space between the image and text */
     }
+
+        .music-card button img {
+            width: 30px; /* Adjust size of the icon */
+            height: 30px; /* Ensure consistent size */
+            object-fit: contain; /* Maintain aspect ratio */
+            vertical-align: middle; /* Adjust baseline alignment */
+            position: relative; /* Allow fine-tuning */
+            top: 7px; /* Move the image up (positive value moves it down) */
+        }
+
 
         .music-card button:hover {
             background-color: darkorange;
@@ -555,4 +650,66 @@ span {
 
 .update-item.open .update-details {
     display: block; /* Show the details when the item is open */
+}
+
+
+.footer-section {
+    width: 100%;
+    padding: 2rem 1rem;
+    text-align: center;
+    color: white;
+    border-top: 2px solid darkorange;
+    margin-top: 3rem;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    box-sizing: border-box; /* Ensure padding doesn't increase width */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers content horizontally */
+}
+
+.footer-content {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers content horizontally */
+    text-align: center; /* Centers text */
+}
+
+    .footer-content h2 {
+        margin-bottom: 1rem;
+        font-size: 2rem;
+        color: darkorange;
+    }
+
+    .footer-content p {
+        margin-bottom: 1.5rem;
+        font-size: 1.2rem;
+        line-height: 1.6;
+    }
+
+.footer-links {
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center; /* Centers links */
+    gap: 1rem; /* Adds spacing between links */
+    flex-wrap: wrap; /* Ensures links wrap on smaller screens */
+}
+
+    .footer-links a {
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+        .footer-links a:hover {
+            color: darkorange;
+        }
+
+.copyright {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-top: 1rem;
 }
