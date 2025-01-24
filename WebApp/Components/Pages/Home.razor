@@ -80,14 +80,33 @@
             <h2>Timeline</h2>
             <span class="arrow" @onclick="IncreaseIndex">&#8594;</span>
         </div>
-        <!-- Dynamic Title -->
-        <div class="arrow-title">
-            <h2>@titles[currentIndex]</h2>
+        <!-- Content Section with Image, Title, and Description -->
+        <div class="arrow-content-inner">
+            <!-- Image Section -->
+            <div class="arrow-image">
+                <div class="image-container">
+                    <img src="@imagePaths[currentIndex]" alt="@titles[currentIndex]"
+                         style="height: @(imageHeights[currentIndex])px; width: auto;" />
+
+                </div>
+            </div>
+
+
+
+
+            <!-- Text Section -->
+            <div class="text-container">
+                <!-- Dynamic Title -->
+                <div class="arrow-title">
+                    <h2>@titles[currentIndex]</h2>
+                </div>
+                <!-- Description -->
+                <p class="arrow-description">
+                    @descriptions[currentIndex]
+                </p>
+            </div>
         </div>
-        <!-- Description -->
-        <p class="arrow-description">
-            @descriptions[currentIndex]
-        </p>
+
         <!-- Circle Indicators -->
         <div class="circle-container">
             @for (int i = 0; i < 8; i++)
@@ -97,6 +116,8 @@
         </div>
     </div>
 </div>
+
+
 
 <footer class="footer-section">
     <div class="footer-content">
@@ -141,6 +162,29 @@
     "A social platform called Bucket Connect was launched to help users manage and share their bucket lists."
     };
 
+    private readonly string[] imagePaths = new string[]
+       {
+        "../Images/Castle Climbers/Slimes/Slime 1.png",
+        "../Images/First ever logo.png",
+        "../Images/Old Castle Climbers Logo.png",
+        "../Images/Kenyon Game Labs Icon.png",
+        "../Images/Castle Climbers/Slimes/Pumpkin.png",
+        "../Images/Castle Climbers/3.0 CC.png",
+        "../Images/Cropped GWW Logo.png",
+        "../Images/BucketConnect/Bucket Connect App Icon.png"
+       };
+
+    private readonly int[] imageHeights = new int[]
+     {
+        100, // Height for index 0
+        190, // Height for index 1
+        150, // Height for index 2
+        150, // Height for index 3
+        150, // Height for index 4
+        150, // Height for index 5
+        150, // Height for index 6
+        150  // Height for index 7
+     };
 
     private void IncreaseIndex()
     {

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy Park</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        header {
+            background-color: #00447c;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        header img {
+            height: 40px;
+        }
+        nav {
+            display: flex;
+            gap: 15px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .hero {
+            background: url('') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+        .hero h1 {
+            font-size: 64px;
+            margin: 0 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        .hero button {
+            margin-top: 20px;
+            padding: 10px 30px;
+            font-size: 18px;
+            background-color: #ffcc00;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .hero button:hover {
+            background-color: #ffbb00;
+        }
+        .content {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .content h2 {
+            font-size: 36px;
+            color: #00447c;
+            margin-bottom: 20px;
+        }
+        .content p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #333;
+        }
+        footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://energy-park.co.uk/assets/logo.png" alt="Energy Park Logo">
+        <nav>
+            <a href="#solutions">Solutions</a>
+            <a href="#about">About Us</a>
+            <a href="#news">News</a>
+        </nav>
+    </header>
+    <div class="hero">
+        <h1>Get set for an electric future</h1>
+        <button>Our solutions</button>
+    </div>
+    <div class="content">
+        <section id="solutions">
+            <h2>Our Solutions</h2>
+            <p>Experts in smart EV charging solutions. We provide tailored energy solutions for a sustainable future.</p>
+        </section>
+        <section id="about">
+            <h2>About Us</h2>
+            <p>Energy Park is committed to accelerating the adoption of electric vehicles through innovative solutions and partnerships. Join us in shaping a cleaner tomorrow.</p>
+        </section>
+        <section id="news">
+            <h2>Latest News</h2>
+            <p>Stay updated with our latest developments and initiatives. Together, we drive the future of sustainable energy.</p>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2024 Energy Park. All rights reserved.</p>
+    </footer>
+</body>
+</html>

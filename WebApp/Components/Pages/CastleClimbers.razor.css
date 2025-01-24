@@ -1,4 +1,9 @@
-﻿.navbar {
+﻿html {
+    scroll-behavior: smooth;
+}
+
+
+.navbar {
     position: absolute;
     top: 5%; /* Adjust vertical position */
     left: 2%; /* Center horizontally within its container */
@@ -479,24 +484,23 @@ span {
         margin-bottom: 0;
     }
 
-
-
-
-
 .music-container-section {
     display: flex;
-    justify-content: space-between;
-    gap: 20px;
+    justify-content: center; /* Centers the containers horizontally */
+    gap: 20px; /* Adds space between each container */
     margin: 20px 0;
 }
 
 .music-container {
     display: flex;
-    flex-direction: column; /* Changes direction to column */
-    align-items: center;
-    padding: 75px;
+    flex-direction: column; /* Keeps the image and text stacked vertically */
+    align-items: center; /* Centers elements inside each container horizontally */
+    justify-content: center; /* Ensures vertical centering of elements */
+    width: 400px; /* Ensures consistent width for containers */
+    height: 200px; /* Ensures consistent height for containers */
+    padding: 20px; /* Adds internal spacing */
     border-radius: 8px;
-    text-align: center; /* Centers the text under the image */
+    text-align: center;
 }
 
 .music-container-image {
@@ -505,6 +509,8 @@ span {
     margin-bottom: 15px; /* Adds spacing between image and text */
     object-fit: cover;
 }
+
+
 
 .music-links {
     display: grid;
@@ -707,6 +713,12 @@ span {
         .footer-links a:hover {
             color: darkorange;
         }
+
+/* Highlighted text style for Castle Climbers */
+.highlight {
+    color: darkorange;
+    font-weight: bold;
+}
 
 .copyright {
     font-size: 0.9rem;

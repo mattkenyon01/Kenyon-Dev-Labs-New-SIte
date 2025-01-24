@@ -284,3 +284,59 @@ span {
     max-width: 800px; /* Optional: Limit width for better readability */
     margin: 0 auto;
 }
+
+
+.footer-section {
+    width: 100%;
+    padding: 2rem 1rem;
+    text-align: center;
+    color: white;
+    border-top: 2px solid #00bfae;
+    margin-top: 3rem;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    box-sizing: border-box; /* Ensure padding doesn't increase width */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers content horizontally */
+}
+
+.footer-content {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers content horizontally */
+    text-align: center; /* Centers text */
+}
+
+    .footer-content h2 {
+        margin-bottom: 1rem;
+        font-size: 2rem;
+        color: #00bfae;
+    }
+
+    .footer-content p {
+        margin-bottom: 1.5rem;
+        font-size: 1.2rem;
+        line-height: 1.6;
+    }
+
+.footer-links {
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center; /* Centers links */
+    gap: 1rem; /* Adds spacing between links */
+    flex-wrap: wrap; /* Ensures links wrap on smaller screens */
+}
+
+    .footer-links a {
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+        .footer-links a:hover {
+            color: #00bfae;
+        }
